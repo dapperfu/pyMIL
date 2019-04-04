@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('RunMatlab') {
       steps {
-        bat(script: '"%MATLAB_BASE%\\%MATLAB_VER%\\bin\\matlab.exe"', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+        bat(script: '"%MATLAB_BASE%\\%MATLAB_VER%\\bin\\matlab.exe" -wait', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
       }
     }
   }
