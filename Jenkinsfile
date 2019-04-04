@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('RunMatlab') {
       steps {
-        bat(script: '"%MATLAB_BASE%\\%MATLAB_VER%\\bin\\matlab.exe" -wait', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+        timeout(unit: 'MINUTES', time: 15) {
+          bat(script: '"%MATLAB_BASE%\\%MATLAB_VER%\\bin\\matlab.exe" -wait', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+        }
+
       }
     }
   }
