@@ -4,7 +4,7 @@ pipeline {
     stage('RunMatlab') {
       steps {
         timeout(unit: 'MINUTES', time: 15) {
-          bat(script: '"%MATLAB_BASE%\\%MATLAB_VER%\\bin\\matlab.exe" -wait', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
+          bat(script: '"%MATLAB_BASE%\\%MATLAB_VER%\\bin\\matlab.exe" -wait -r git statu"quit force"', encoding: 'UTF-8', returnStatus: true, returnStdout: true)
         }
 
       }
